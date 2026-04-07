@@ -4,6 +4,9 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
+import seedRoutes from "./part-3-api-implementation/routes/seedRoutes.js"
+import alertRoutes from "./part-3-api-implementation/routes/alertRoutes.js"
+
 const app = express()
 
 app.use(express.json())
@@ -20,6 +23,9 @@ const connectDB = async () => {
 }
 
 await connectDB()
+
+app.use("/seed", seedRoutes);
+app.use("/api/companies", alertRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running")

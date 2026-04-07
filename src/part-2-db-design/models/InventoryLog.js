@@ -23,6 +23,12 @@ const inventoryLogSchema = new mongoose.Schema({
   created_at: {
     type: Date,
     default: Date.now
+  },
+
+  type: {
+    type: String,
+    enum: ["sale", "restock", "adjustment"],
+    required: true
   }
 
 });

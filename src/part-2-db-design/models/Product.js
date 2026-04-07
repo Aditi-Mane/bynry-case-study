@@ -24,6 +24,11 @@ const productSchema = new mongoose.Schema({
     type: String,
     enum: ["normal", "bundle"],
     default: "normal"
+  },
+
+  low_stock_threshold: {
+    type: Number,
+    default: 10
   }
 
 }, { timestamps: true });
